@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A diary application">
+    <meta name="author" content="Cypherspot">
+
+    <title>The Big Picture - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'diary/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'diary/css/the-big-picture.css' %}" rel="stylesheet">
+    <style>
+        body {
+            background: url('{% static 'diary/img/one.jpg' %}') no-repeat center center fixed;
+            width: 100%;
+            height: 100%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            color: white;
+        }
+
+        .navbar {
+            /* width: 100%; */
+            height: 4rem;
+            background-color: #025022;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 130%;
+            color: #ffffff;
+            padding: 1rem 5rem;
+        }
+
+        .nav-link {
+            color: white;
+            padding: 1rem;
+        }
+
+        .nav-link:hover,
+        .navbar-brand:hover {
+            color: #fffff0;
+        }
+        small:hover {
+            font-size: 180%;
+            font-weight: 600;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">Cypherspot</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'index' %}">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Signin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Signup</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="mt-5">Dear diary,</h1>
+                    <p><small>This is a recreation app, where you can write to your diary everyday.</small></p>
+                    <p>Dear diary, </p>
+                    <p>I started out to learn python programming few years ago and now 
+                        I built this wonderful application that can be used by anyone 
+                        and everyone around the globe. Slick huh! 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'diary/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'diary/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

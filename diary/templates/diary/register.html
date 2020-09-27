@@ -1,0 +1,64 @@
+{% extends "diary/base.html" %}
+{% load widget_tweaks %}
+
+{% block body %}
+<style>
+    @keyframes show {
+        0% {
+            opacity: 0;
+        }
+
+        25% {
+            opacity: .3;
+        }
+        50% {
+            opacity: .5;
+        }
+        75% {
+            opacity: .75;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .wrapper {
+        /* width: 15rem; */
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        width: 70%;
+        margin: 5rem auto;
+        animation: show 1s;
+    }
+
+</style>
+
+<div class="container">
+    <div class="container-fluid">
+        <div class="wrapper">
+            <h2 class="p-2 mb-3">SIGNUP</h2>
+            <form method="POST" class="form" action="">
+                {% csrf_token %}
+                {% if registered == False %}
+                <div class="form-group">
+                    <small class="text-danger">Username already exist!</small>
+                </div>
+                {% endif %}
+                <div class="form-group pb-4">
+                    <label for="username" class="pl-3">Username</label>
+                    {% render_field form.username class="form-control" id="username" autofocus="true" %}
+                </div>
+                <div class="form-group pb-3">
+                    <label for="password" class="pl-3">Password</label>
+                    {% render_field form.password class="form-control" id="password" %}
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <a class="link float-right" href="{% url 'login' %}">Already registered?                                                            </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

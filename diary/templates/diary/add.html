@@ -1,0 +1,25 @@
+{% extends "diary/base.html" %}
+{% load widget_tweaks %}
+
+{% block body %}
+
+<div class="container p-5">
+    <div class="container-fluid">
+        <div>
+            <div>
+                <form method="POST" class="form" action="">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <!-- <textarea class="form-control" rows="3"></textarea> -->
+                        {% render_field form.message class="form-control" rows="3" %}
+                    </div>
+                    <div>
+                        <input class="btn btn-primary" type="submit" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

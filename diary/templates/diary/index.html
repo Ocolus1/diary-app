@@ -1,0 +1,27 @@
+{% extends "diary/base.html" %}
+
+{% block body %}
+
+<div class="container p-5">
+    <div class="container-fluid">
+        <div>
+            <div class="pb-3 pl-3">
+                <a href="{% url 'add' %}" class="btn btn-transparent btn-primary">Add New</a>
+            </div>
+            <div>
+                <ul class="list-group list-group-flush">
+                    {% for diary in diarys %}
+                    <li class="list-group-item">
+                        <p>{{ diary.pub_at }}</p>
+                        {{ diary.message}}
+                        {% empty %}
+                        <h2>Put in some text.</h2>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
